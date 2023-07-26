@@ -2,18 +2,10 @@
 clc; 
 clear all;
 close all; 
+run('Labyrinth.m');
 
-main_massive = {
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0;
-    0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0;
-    0, ' ', ' ', ' ', ' ', 0, 0, 0, 0, 0;
-    0, ' ', ' ', ' ', ' ', 0, ' ', 0, ' ', ' ';
-    0, ' ', 0, 0, 0, 0, ' ', 0, ' ', 0;
-    0, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 0;
-    0, ' ', 0, 0, 0, 0, 0, 0, 0, 0;
-    0, 0, 0, ' ', ' ', ' ', ' ', ' ', ' ', 0
-};
-final_massive = main_massive;
+main_massive = MyLabyrinth;
+final_massive = MyLabyrinth;
 
 program_active = true;
 

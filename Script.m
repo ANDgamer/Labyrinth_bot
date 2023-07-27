@@ -4,7 +4,7 @@ clear all;
 close all; 
 
 %The first method
-    fname = 'maze.json'; 
+    fname = 'Data.json'; 
     fid = fopen(fname); 
     raw = fread(fid,inf); 
     str = char(raw'); 
@@ -35,20 +35,20 @@ main_massive(j, i) = 8;
 
 while program_active == true
     if main_massive(j-1, i) == 0
-        pzdc = false;
+        DeadEnd = false;
         j = j-1;
     elseif main_massive(j, i+1) == 0
-        pzdc = false;
+        DeadEnd = false;
         i = i+1;
     elseif main_massive(j+1, i) == 0
-        pzdc = false;
+        DeadEnd = false;
         j = j+1;
     elseif main_massive(j, i-1) == 0
-        pzdc = false;
+        DeadEnd = false;
         i = i-1;
     else
-        disp("HZ");
-        pzdc = true;
+        disp("Roll back");
+        DeadEnd = true;
         n = n - 1;
         j = data(1, n-1);
         i = data(2, n-1);
@@ -64,9 +64,10 @@ while program_active == true
         program_active = false;
     end
     
+    %Don`t touch this ;)
     %if n <= 0 program_active = false; end
     
-    if pzdc ~= true && program_active == true
+    if DeadEnd ~= true && program_active == true
         n = n + 1;
     end
 end

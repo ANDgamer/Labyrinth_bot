@@ -3,7 +3,7 @@ clc;
 clear all;
 close all; 
 
-%The first method
+% (1) The first method
     fname = 'Data.json'; 
     fid = fopen(fname); 
     raw = fread(fid,inf); 
@@ -13,7 +13,7 @@ close all;
     final_massive = jsondecode(str);
 %end
 
-%second method
+% (2) Second method
     %run('Data.m');
     %main_massive = Labyrinth;
     %final_massive = Labyrinth;
